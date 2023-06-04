@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	display: grid;
+	justify-content: center;
+	background-color: #363639;
+}
+
+#root {
+	max-width: 1600px;
+	width: 1600px;
+	height: 100%;
+	display: grid;
+	justify-content: center;
+	background-color:#363639;
+	color: white;
+}

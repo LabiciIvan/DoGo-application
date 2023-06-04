@@ -1,0 +1,34 @@
+.navigation-bar {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	justify-content: center;
+	background-color:  #525255;
+}
+
+.navigation-bar-content {
+	max-width: 1600px;
+	width: 1600px;
+	display: grid;
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.navigation-link-wrapper {
+	display: grid;
+}
+
+.navigation-link {
+	color: white;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	align-self: center;
+	justify-self: center;
+}
+
+.navigation-link:hover {
+	color: #b4abab;
+	transition: 0.2s;
+}
