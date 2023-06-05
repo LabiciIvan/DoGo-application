@@ -6,10 +6,10 @@ import NavBar from '../components/NavBar';
 
 const Authenticated = () => {
 	return ( 
-		<div className="authenticated-layout">
+		<React.Fragment>
 			<NavBar />
 			<Outlet/>
-		</div>
+		</React.Fragment>
 	 );
 }
  

@@ -1,34 +1,117 @@
+.__nav-bg {
+	background-color:  white;
+}
+
 .navigation-bar {
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
+	display: grid;
+	width: inherit;
 	height: 80px;
-	width: 100%;
+	position: relative;
 	justify-content: center;
-	background-color:  #525255;
+	border-radius: 0 0 5px 5px;
 }
 
-.navigation-bar-content {
-	max-width: 1600px;
-	width: 1600px;
+.main-bar {
+	display: inherit;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	background-color: transparent;
+	grid-template-columns: repeat(8, 1fr);
+	top: 0;
+}
+
+.menu-off{
+	display: none;
+}
+
+.menu-on {
 	display: grid;
-	grid-template-columns: repeat(9, 1fr);
+	width: inherit;
+	gap: 5px;
+	height: 240px;
+	z-index: 2;
+	border-radius: 0 0 5px 5px;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(3, 1fr);
 }
 
+/* Navigation bar icons */
+.--icon {
+	color: black;
+	font-size: 45px;
+	cursor: pointer;
+	justify-self: center;
+	align-self: center;
+}
+
+.__close {
+	grid-area: 1/8/2/9;
+}
+
+.__list {
+	grid-area: 1/8/2/9;
+}
+
+
+/* Navigation bar links */
 .navigation-link-wrapper {
+	background-color: #f9f9f9;
 	display: grid;
+	justify-content: center;
+	align-items: center;
 }
 
 .navigation-link {
-	color: white;
 	text-decoration: none;
+	color: black;
 	font-family: 'Josefin Sans', sans-serif;
-	align-self: center;
-	justify-self: center;
+	font-size: 18px;
 }
 
-.navigation-link:hover {
-	color: #b4abab;
-	transition: 0.2s;
+.__home {
+	grid-area: 1/1/2/2;
+	background-color: unset;
+}
+
+.__user-name {
+    grid-area: 2/3/3/5;
+}
+
+.__account {
+	grid-area: 3/5/4/6;
+}
+
+.__signal {
+	grid-area: 2/5/3/6;
+}
+
+.__dashboard {
+	grid-area: 3/4/4/5;
+}
+
+.__about {
+	grid-area: 3/7/4/9;
+	border-radius: 0 0 5px 0;
+}
+
+.__sign-up {
+	grid-area: 2/8/3/9;
+}
+
+.__sign-in {
+	grid-area: 2/7/3/8;
+}
+
+.__management {
+	grid-area: 2/6/3/7 ;
+}
+
+.__settings {
+	grid-area: 3/6/4/7 ;
+}
+
+.navigation-link-wrapper:hover {
+	background-color: #c8c8c8;
+	transition: 0.3s;
 }
