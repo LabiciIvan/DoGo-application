@@ -6,10 +6,10 @@ import NavBar from '../components/NavBar.jsx';
 
 const Guest = () => {
 	return ( 
-		<div className="guest-layout">
+		<React.Fragment>
 			<NavBar />
 			<Outlet />
-		</div>
+		</React.Fragment>
 	 );
 }
  

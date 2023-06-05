@@ -6,10 +6,10 @@ import NavBar from '../components/NavBar';
 
 const Admin = () => {
 	return ( 
-		<div className="admin-layout">
+		<React.Fragment>
 			<NavBar/>
 			<Outlet/>
-		</div>
+		</React.Fragment>
 	 );
 }
  
