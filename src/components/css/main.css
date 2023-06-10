@@ -12,7 +12,8 @@ body {
 	width: 100%;
 	height: 100%;
 	justify-content: center;
-	background-color: #363639;
+	/* background-color: rgb(234, 234, 234); */
+	background-color: white;
 }
 
 #root {
@@ -21,6 +22,6 @@ body {
 	max-width: 1600px;
 	height: 100%;
 	justify-content: center;
-	background-color:#363639;
-	color: white;
+	background-color: white;
+	color: black;
 }
