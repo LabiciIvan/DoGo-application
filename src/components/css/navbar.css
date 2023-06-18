@@ -1,118 +1,40 @@
-.__nav-bg {
-	background-color:  white;
-}
-
-.navigation-bar {
+.NavBar {
 	display: grid;
+	border: 1px solid black;
 	width: inherit;
-	height: 80px;
-	position: relative;
-	justify-content: center;
-	border-radius: 0 0 5px 5px;
-	box-shadow: 0px 22px 19px -21px rgba(66, 68, 90, 1);
-}
-
-.main-bar {
-	display: inherit;
-	width: inherit;
-	height: inherit;
-	position: absolute;
-	background-color: transparent;
 	grid-template-columns: repeat(8, 1fr);
-	top: 0;
 }
 
-.menu-off{
+.profile-menu_off {
 	display: none;
 }
 
-.menu-on {
-	display: grid;
-	width: inherit;
+.profile-menu_on {
+	display: flex;
+	flex-direction: column;
 	gap: 5px;
-	height: 240px;
-	z-index: 2;
-	border-radius: 0 0 5px 5px;
-	grid-template-columns: repeat(8, 1fr);
-	grid-template-rows: repeat(3, 1fr);
+	width: 150px;
+	height: 200px;
+	border: 1px solid black;
+	border-radius: 5px;
+	position: relative;
 }
 
-/* Navigation bar icons */
-.--icon {
-	color: black;
-	font-size: 45px;
+.bi.bi-caret-down-fill {
+	display: flex;
 	cursor: pointer;
-	justify-self: center;
-	align-self: center;
 }
 
-.__close {
-	grid-area: 1/8/2/9;
-}
-
-.__list {
-	grid-area: 1/8/2/9;
-}
-
-
-/* Navigation bar links */
-.navigation-link-wrapper {
-	background-color: #f9f9f9;
-	display: grid;
-	justify-content: center;
+.profile-dropDown {
+	display: flex;
+	flex-direction: row;
 	align-items: center;
 }
 
-.navigation-link {
-	text-decoration: none;
-	color: black;
-	font-family: 'Josefin Sans', sans-serif;
-	font-size: 18px;
-}
-
-.__home {
-	grid-area: 1/1/2/2;
-	background-color: unset;
-}
-
-.__user-name {
-    grid-area: 2/3/3/5;
-}
-
-.__account {
-	grid-area: 3/5/4/6;
-}
-
-.__signal {
-	grid-area: 2/5/3/6;
-}
-
-.__dashboard {
-	grid-area: 3/4/4/5;
-}
-
-.__about {
-	grid-area: 3/7/4/9;
-	border-radius: 0 0 5px 0;
-}
-
-.__sign-up {
-	grid-area: 2/8/3/9;
-}
-
-.__sign-in {
-	grid-area: 2/7/3/8;
-}
-
-.__management {
-	grid-area: 2/6/3/7 ;
-}
-
-.__settings {
-	grid-area: 3/6/4/7 ;
-}
-
-.navigation-link-wrapper:hover {
-	background-color: #c8c8c8;
-	transition: 0.3s;
+.profile-image {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: black;
 }
