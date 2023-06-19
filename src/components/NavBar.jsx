@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import './css/navbar.css';
+import profile_picture from '../assets/dogo_profile.png';
 
 const NavBar = () => {
 
@@ -13,6 +14,7 @@ const NavBar = () => {
 		{
 			name: 'John Doe',
 			isAdmin: true,
+			image: profile_picture
 		}
 	);
 
@@ -74,12 +76,13 @@ const NavBar = () => {
 		// This is displayed only if user is logged.
 		if (isLogged) {
 			return <div key={1} className='profile-dropDown'>
-				<img className='profile-image'/>
+				<img className='profile-image' src={user.image}/>
 				<i className="bi bi-caret-down-fill" onClick={toggleDropDownMenu}></i>
 
 				<div className={toggleMenu === true ? 'profile-menu_on' : 'profile-menu_off'}>
-					<Link to={'/authenticated/account'}>Account</Link>
+					<Link className='navigation-link profile-menu' to={'/authenticated/account'}>Account</Link>
 					{showAdminLinks()}
+					<Link className='navigation-link profile-menu' to={'/'}>Sign out</Link>
 				</div>
 			</div>
 		}
@@ -94,7 +97,7 @@ const NavBar = () => {
 	const showAdminLinks = () => {
 		if (user.isAdmin === true) {
 			return adminUser.map(link => 
-				<Link key={link.url_name} to={link.to}>{link.url_name}</Link>
+				<Link className='navigation-link profile-menu' key={link.url_name} to={link.to}>{link.url_name}</Link>
 			);
 		}
 	}
