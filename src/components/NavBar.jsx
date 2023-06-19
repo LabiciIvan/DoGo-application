@@ -14,7 +14,7 @@ const NavBar = () => {
 			name: 'John Doe',
 			isAdmin: true,
 		}
-	)
+	);
 
 	// Displayed for guests.
 	const guestUser = [
