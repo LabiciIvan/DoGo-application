@@ -1,22 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
+// Services imports.
+import CheckAndLog  from '../services/CheckAndLog';
+
+// Styles and images imports.
 import './css/navbar.css';
-import profile_picture from '../assets/dogo_profile.png';
+import DoGo_profile_picture from '../assets/dogo_profile.png';
 
 const NavBar = () => {
 
-	const isLogged = true;
-
 	const [toggleMenu, setToggleMenu] = useState(false);
 
-	const [user, setUser] = useState(
-		{
-			name: 'John Doe',
-			isAdmin: true,
-			image: profile_picture
-		}
-	);
+	const [user, setUser] = useState(null);
+
+	// Set state based on the return of CheckAndLog().
+	useEffect(() => {
+		const user = CheckAndLog();
+
+		setUser(user);
+	},[]);
 
 	// Displayed for guests.
 	const guestUser = [
@@ -56,13 +59,13 @@ const NavBar = () => {
 
 	// Decides what users can see.
 	const navigationCentralize = () => {
-		if (!isLogged) {
+		if (!user) {
 			// Display navigation for guest user.
 			return guestUser.map(link =>
 				<Link className='navigation-link' key={link.url_name} to={link.to}>{link.url_name}</Link>
 			);
 		}
-		else if (isLogged)
+		else if (user)
 		{
 			// Display navigation for logged user.
 			return loggedUser.map(link => 
@@ -74,9 +77,9 @@ const NavBar = () => {
 	// Logged user profile icon menu.
 	const profileIconMenu = () => {
 		// This is displayed only if user is logged.
-		if (isLogged) {
+		if (user) {
 			return <div key={1} className='profile-dropDown'>
-				<img className='profile-image' src={user.image}/>
+				<img className='profile-image' src={user !== null && user.image !== null ? user.image : DoGo_profile_picture}/>
 				<i className="bi bi-caret-down-fill" onClick={toggleDropDownMenu}></i>
 
 				<div className={toggleMenu === true ? 'profile-menu_on' : 'profile-menu_off'}>
@@ -95,7 +98,7 @@ const NavBar = () => {
 
 	// Outputs the links for admin.
 	const showAdminLinks = () => {
-		if (user.isAdmin === true) {
+		if (user !== null && user.isAdmin === true) {
 			return adminUser.map(link => 
 				<Link className='navigation-link profile-menu' key={link.url_name} to={link.to}>{link.url_name}</Link>
 			);
@@ -104,7 +107,7 @@ const NavBar = () => {
 
 	return ( 
 		<div className="NavBar">
-		
+
 			<Link className='navigation-link' to={'/'}>Home</Link>
 
 			<Link className='navigation-link' to={'/about'}>About</Link>
@@ -115,5 +118,5 @@ const NavBar = () => {
 		</div>
 	 );
 }
- 
+
 export default NavBar;
