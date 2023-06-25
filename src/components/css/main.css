@@ -8,9 +8,8 @@
 }
 
 :root {
-	--body-background: #eaeaea;
+	--body-background: white;
 }
-
 
 body {
 	display: grid;
