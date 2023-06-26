@@ -23,17 +23,20 @@ const secondViewDescription = [
 	{
 		id: 1,
 		class: 'secondary_section-one',
-		content: 'At DoGo, we are dedicated to the noble cause of preventing dog abandonment and ensuring every canine companion finds a loving home.'
+		content: 'At DoGo, we are dedicated to the noble cause of preventing dog abandonment and ensuring every canine companion finds a loving home.',
+		extra: ''
 	},
 	{
 		id: 2,
 		class: 'secondary_section-two',
-		content:'Our mission is to create a seamless platform where compassionate individuals like you can make a difference in the lives of abandoned dogs.'
+		content:'Our mission is to create a seamless platform where compassionate individuals like you can make a difference in the lives of abandoned dogs.',
+		extra: ''
 	},
 	{
 		id: 3,
 		class: 'secondary_section-three',
-		content: 'Signal a Dog: With our user-friendly interface, you can easily signal a dog in need. Whether you come across a stray on the streets or learn about a neglected pup, simply provide the details, and our dedicated team will swing into action.'
+		content: 'Signal a Dog: With our user-friendly interface, you can easily signal a dog in need. Whether you come across a stray on the streets or learn about a neglected pup, simply provide the details, and our dedicated team will swing into action.',
+		extra: ''
 	},
 	{
 		id: 4,
