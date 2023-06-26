@@ -9,6 +9,9 @@ import dogo_1 from '../../../assets/dogo_picture_one.jpg';
 import dogo_2 from '../../../assets/dogo_picture_two.jpg';
 import dogo_3 from '../../../assets/dogo_picture_three.jpg';
 
+// Data imports.
+import { dataHome, dataHome2 } from '../../../assets/home-page/data';
+
 
 const Home = () => {
 	 // Application name loaded from .env file.
@@ -18,6 +21,13 @@ const Home = () => {
 	// and passed as props to CarsouselImages component.
 	const images = [dogo_1, dogo_2, dogo_3];
 
+	// Data for the first section (1vh) of the home page.
+	const firstViewData = () => {
+		return dataHome.map(HTMLElement =>
+			<h4 className={HTMLElement.class} key={HTMLElement.id} >{HTMLElement.content}</h4>
+		);
+	}
+
 	return (
 		<React.Fragment>
 			<div className="home">
@@ -26,15 +36,22 @@ const Home = () => {
 				<div className="home-ending_section">
 					<div className="filler"></div>
 					<div className="first_section-text">
-						<h4 className='first_section-header'>Your trusted partner when it comes to Dogs.</h4>
-						<h4 className='_content-one'>Unleash boundless possibilities with DoGo, the leading provider of dog welfare solutions!</h4>
-						<h4 className='_content-two'>Established in the world of dog care in 2023, we've built a reputation for providing services that go above and beyond.</h4>
-						<h4 className='_content-three'>Imagine a partner who not only seamlessly integrates with your dog-related initiatives and values but consistently delivers life-changing solutions that elevate the well-being of our furry friends.</h4>
+						{firstViewData()}
 					</div>
 				</div>
 			</div>
 
-			<div className="home-secondary_section">Welcome to {appName}</div>
+			<div className="home-secondary_section">
+				<div className="secondary-bg-column"></div>
+				<div className="secondary-bg">
+					<div className="secondary-wrapper_one">
+
+					</div>
+					<div className="secondary-wrapper_two">
+
+					</div>
+				</div>
+			</div>
 		</React.Fragment>
 	);
 }
