@@ -5,8 +5,6 @@ import './css/text-slider.css'
 
 const TextSlider = ({content}) => {
 
-	console.log('text', content);
-
 	const [text, setText] = useState(content);
 
 	const displayText = () => {
