@@ -94,8 +94,14 @@
 .secondary-wrapper_one {
 	display: grid;
 	grid-area: 1/1/3/5;
-	background-color:darkgray;
 	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 0.2fr 0.4fr 0.4fr;
+}
+
+.wrapper_one-slider {
+	display: grid;
+	grid-area: 1/1/2/4;
+	background-color: rgb(24, 24, 24);
 }
 
 .secondary-wrapper_two {
