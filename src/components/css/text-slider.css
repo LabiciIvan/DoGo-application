@@ -1,0 +1,47 @@
+.text-slider {
+	display: grid;
+	width: inherit;
+	height: inherit;
+	grid-template-columns: 0.1fr 0.8fr 0.1fr;
+	grid-template-rows: 0.2fr 0.8fr;
+}
+
+.bi.bi-arrow-right,
+.bi.bi-arrow-left {
+	display: grid;
+	align-self: center;
+	justify-self: center;
+	font-size: 3rem;
+	color: white;
+	cursor: pointer;
+}
+
+.bi.bi-arrow-right {
+	grid-area: 2/3/3/4;
+}
+
+.bi.bi-arrow-left {
+	grid-area: 2/1/3/2;
+}
+
+.bi.bi-arrow-right:hover,
+.bi.bi-arrow-left:hover {
+	transition: 0.2s;
+	color: #8b8b8b;
+}
+
+.slider-map {
+	display: grid;
+	grid-area: 1/2/2/3;
+}
+
+.slider-content {
+	display: flex;
+	grid-area: 2/2/3/3;
+}
+
+.slider-imported-content {
+	display: grid;
+	color: white;
+	font-family: 'Josefin Sans', sans-serif;
+}

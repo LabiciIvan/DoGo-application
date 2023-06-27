@@ -50,6 +50,26 @@ const secondViewDescription = [
 		content: 'War Shelter: We understand that the journey to finding a forever home takes time. During this transition period, our well-equipped war shelters become a temporary haven for rescued dogs.',
 		extra: 'These shelters offer a safe and nurturing environment, where our furry friends receive love, companionship, and continuous medical support.'
 	},
-]
- 
-export {firstViewDescription as dataHome, secondViewDescription as dataHome2};
+];
+
+const whatPeopleSay = [
+	{
+		id: 1,
+		content: 'DoGo app rocks! Simplifies dog care and keeps us connected.'
+	},
+	{
+		id: 2,
+		content: 'Life-changing app for dog owners. Must-have!'
+	},
+	{
+		id: 3,
+		content: 'DoGo app: Where dog care meets innovation. Simply amazing!'
+	},
+	{
+		id: 4,
+		content: 'DoGo is a dog owner\'s dream come true. Pure perfection.'
+	},
+
+];
+
+export {firstViewDescription as dataHome, secondViewDescription as dataHome2, whatPeopleSay as dataHome3};

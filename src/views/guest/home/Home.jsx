@@ -2,6 +2,7 @@ import React from 'react';
 
 // Components import.
 import CarouselImages from '../../../components/CarouselImages';
+import TextSlider from '../../../components/TextSlider';
 
 // Styles and Images imports
 import './home.css';
@@ -10,7 +11,7 @@ import dogo_2 from '../../../assets/dogo_picture_two.jpg';
 import dogo_3 from '../../../assets/dogo_picture_three.jpg';
 
 // Data imports.
-import { dataHome, dataHome2 } from '../../../assets/home-page/data';
+import { dataHome, dataHome2, dataHome3 } from '../../../assets/home-page/data';
 
 
 const Home = () => {
@@ -45,7 +46,9 @@ const Home = () => {
 				<div className="secondary-bg-column"></div>
 				<div className="secondary-bg">
 					<div className="secondary-wrapper_one">
-
+						<div className="wrapper_one-slider">
+							<TextSlider content={dataHome3}/>
+						</div>
 					</div>
 					<div className="secondary-wrapper_two">
 
