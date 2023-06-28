@@ -54,19 +54,19 @@ const secondViewDescription = [
 
 const whatPeopleSay = [
 	{
-		id: 1,
+		id: 0,
 		content: 'DoGo app rocks! Simplifies dog care and keeps us connected.'
 	},
 	{
-		id: 2,
+		id: 1,
 		content: 'Life-changing app for dog owners. Must-have!'
 	},
 	{
-		id: 3,
+		id: 2,
 		content: 'DoGo app: Where dog care meets innovation. Simply amazing!'
 	},
 	{
-		id: 4,
+		id: 3,
 		content: 'DoGo is a dog owner\'s dream come true. Pure perfection.'
 	},
 
