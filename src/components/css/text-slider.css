@@ -31,8 +31,9 @@
 }
 
 .slider-map {
-	display: grid;
+	display: flex;
 	grid-area: 1/2/2/3;
+	flex-direction: row;
 }
 
 .slider-content {
@@ -41,7 +42,19 @@
 }
 
 .slider-imported-content {
-	display: grid;
+	display: none;
 	color: white;
 	font-family: 'Josefin Sans', sans-serif;
+}
+
+.slider-imported-map {
+	display: flex;
+	height: 7px;
+	width: 25%;
+	margin-top: 4px;
+	border-radius: 10px;
+}
+
+.slider-imported-map._1 {
+	background-color: white;
 }
