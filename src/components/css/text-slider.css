@@ -58,6 +58,10 @@
 	border-radius: 10px;
 }
 
-.slider-imported-map._1 {
+.slider-imported-map._0 {
 	background-color: white;
+}
+
+.slider-imported-content._0 { 
+	display: grid;
 }
