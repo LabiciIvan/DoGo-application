@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Styles import
 import './css/text-slider.css'
 
 const TextSlider = ({content}) => {
 
+	// First loading the component make first element visible
+	useEffect(() => {
+		let firstElement = document.querySelector(`.slider-imported-content._${text[0].id}`);
+		
+		makeElementVisible(firstElement);
+	}, []);
+
 	const [text, setText] = useState(content);
 
-	const [start, setStart] = useState(0);
+	const [start, setStart] = useState(1);
+
+	const [lastElement, setLastElement] = useState(null);
 	
 	const displayText = () => {
 		return text.map(review => 
@@ -25,32 +34,28 @@ const TextSlider = ({content}) => {
 	const swipeRight = () => {
 		// Swiping to right
 		let element = getElement(start, true);
+		makeElementVisible(element);
 	}
 
 	// Left uses boolean false.
 	const swipeLeft = () => {
 		// Swiping to left
 		let element = getElement(start, false);
+		makeElementVisible(element);
 	}
 
 	// direction parameter is true = right || false = left.
 	const getElement = (id, direction) => {
 		if (direction) {
-			// Direction is to the right.
-			id = (id < content.length) ? id : 0;
-
-			if (id < content.length) {
+			if (id < content.length - 1) {
 				setStart(prev => prev + 1);
-			}
-			else
+			} else
 			{
 				setStart(0);
 			}
 		}
 		else if (!direction)
 		{	// Direction is to the left.
-			id = (id > -1) ? id : content.length - 1;
-
 			if (id !== 0) {
 				setStart(prev => prev - 1);
 			}
@@ -59,10 +64,18 @@ const TextSlider = ({content}) => {
 				setStart(content.length - 1);
 			}
 		}
-
 		let elementHTML = document.querySelector(`.slider-imported-content._${id}`);
 
 		return elementHTML;
+	}
+
+	// Make element visible and save it in state.
+	const makeElementVisible = (element) => {
+		if (lastElement !== null) {
+			lastElement.style.display = 'none';
+		}
+		element.style.display = 'grid';
+		setLastElement(element);
 	}
 
 	return (

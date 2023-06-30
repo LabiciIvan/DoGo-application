@@ -39,12 +39,15 @@
 .slider-content {
 	display: flex;
 	grid-area: 2/2/3/3;
+	justify-content: center;
+	align-items: center;
 }
 
 .slider-imported-content {
 	display: none;
 	color: white;
 	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
 }
 
 .slider-imported-map {
@@ -55,6 +58,10 @@
 	border-radius: 10px;
 }
 
-.slider-imported-map._1 {
+.slider-imported-map._0 {
 	background-color: white;
+}
+
+.slider-imported-content._0 { 
+	display: grid;
 }

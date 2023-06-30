@@ -49,6 +49,12 @@ const Home = () => {
 						<div className="wrapper_one-slider">
 							<TextSlider content={dataHome3}/>
 						</div>
+						{dataHome2.map(e =>
+							<div className="wrapper_one-aboutUS">
+								<div className="wrapper_one-aboutUS-content">{e.content}</div>
+								<div className="wrapper_one-aboutUS-extra">{e.extra}</div>
+							</div>
+						)}
 					</div>
 					<div className="secondary-wrapper_two">
 
