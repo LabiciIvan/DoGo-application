@@ -109,3 +109,16 @@
 	grid-area: 3/1/5/5;
 	background-color: gray;
 }
+
+.wrapper_one-aboutUS {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	padding: 0 5px 0 5px;
+	line-height: 2;
+}
+
+.wrapper_one-aboutUS-extra {
+	display: none;
+}
