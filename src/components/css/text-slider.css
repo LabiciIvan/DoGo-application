@@ -51,15 +51,17 @@
 }
 
 .slider-imported-map {
-	display: flex;
+	display: grid;
+	opacity: 0;
 	height: 7px;
 	width: 25%;
 	margin-top: 4px;
 	border-radius: 10px;
+	background-color: white;
 }
 
 .slider-imported-map._0 {
-	background-color: white;
+	opacity: 1;
 }
 
 .slider-imported-content._0 { 

@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Styles import
 import './css/text-slider.css'
 
 const TextSlider = ({content}) => {
 
-	// First loading the component make first element visible
-	useEffect(() => {
-		let firstElement = document.querySelector(`.slider-imported-content._${text[0].id}`);
-		
-		makeElementVisible(firstElement);
-	}, []);
+	const [text, setText]			= useState(content);
+	const [contentId, setContentId]	= useState(0);
 
-	const [text, setText] = useState(content);
-
-	const [start, setStart] = useState(1);
-
-	const [lastElement, setLastElement] = useState(null);
-	
 	const displayText = () => {
 		return text.map(review => 
 			<h5 key={review.id} className={`slider-imported-content _${review.id}`}>{review.content}</h5>
@@ -33,49 +23,53 @@ const TextSlider = ({content}) => {
 	// Right uses boolean true.
 	const swipeRight = () => {
 		// Swiping to right
-		let element = getElement(start, true);
-		makeElementVisible(element);
+		let previousContent = document.querySelector(`.slider-imported-content._${contentId}`);
+		let currentContent	= getContentElement(contentId, true);
+
+		previousContent.style.display	= 'none';
+		currentContent.style.display	= 'grid';
 	}
 
 	// Left uses boolean false.
 	const swipeLeft = () => {
 		// Swiping to left
-		let element = getElement(start, false);
-		makeElementVisible(element);
+		let previousContent = document.querySelector(`.slider-imported-content._${contentId}`);
+		let currentContent	= getContentElement(contentId, false);
+
+		previousContent.style.display = 'none';
+		currentContent.style.display = 'grid';
 	}
 
-	// direction parameter is true = right || false = left.
-	const getElement = (id, direction) => {
-		if (direction) {
-			if (id < content.length - 1) {
-				setStart(prev => prev + 1);
-			} else
-			{
-				setStart(0);
-			}
+	// direction parameter is true === right || false === left.
+	const getContentElement = (id, direction) => {
+		switch (direction) {
+			case true: // If right element is last from array then start from begining.
+				if (id === content.length - 1) {
+					setContentId(0);
+					id = 0;
+				} 
+				else
+				{
+					setContentId(prev => prev + 1);
+					id += 1;
+				}
+				break;
+			case false: // If left element is first from array then start from end.
+				if (id === 0) {
+					setContentId(content.length - 1);
+					id = content.length - 1;
+				} 
+				else
+				{
+					setContentId(prev => prev - 1);
+					id -= 1;
+				}
+				break;
 		}
-		else if (!direction)
-		{	// Direction is to the left.
-			if (id !== 0) {
-				setStart(prev => prev - 1);
-			}
-			else 
-			{
-				setStart(content.length - 1);
-			}
-		}
-		let elementHTML = document.querySelector(`.slider-imported-content._${id}`);
 
-		return elementHTML;
-	}
+		let contentHTML = document.querySelector(`.slider-imported-content._${id}`);
 
-	// Make element visible and save it in state.
-	const makeElementVisible = (element) => {
-		if (lastElement !== null) {
-			lastElement.style.display = 'none';
-		}
-		element.style.display = 'grid';
-		setLastElement(element);
+		return contentHTML;
 	}
 
 	return (
