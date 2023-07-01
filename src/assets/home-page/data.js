@@ -63,7 +63,7 @@ const whatPeopleSay = [
 	},
 	{
 		id: 2,
-		content: 'DoGo app: Where dog care meets innovation. Simply amazing!'
+		content: 'DoGo, where dog care meets innovation. Simply amazing!'
 	},
 	{
 		id: 3,
