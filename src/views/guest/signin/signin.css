@@ -1,7 +1,7 @@
 .sign-in {
-	display: flex;
+	display: grid;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	width: 100%;
+	height: calc(100vh - 55px); /* This is the calculation of the height */
+	width: inherit;
 }
