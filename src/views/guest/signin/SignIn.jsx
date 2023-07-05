@@ -22,11 +22,11 @@ const SignIn = () => {
 		<div className="sign-in" onSubmit={handleSubmit}>
 			<form className="sign-in_form">
 
-				<input type="email" className='sign-in_input' ref={emailRef} />
+				<input type="email" className='sign-in_input' ref={emailRef} placeholder='Email address' />
 
-				<input type="password" className='sign-in_input' ref={passwordRef}/>
+				<input type="password" className='sign-in_input' ref={passwordRef} placeholder='Password'/>
 
-				<button className="button" type="submit">Sign in</button>
+				<button className="sign-in_button" type="submit">Sign in</button>
 			</form>
 		</div>
 	);
