@@ -9,42 +9,62 @@
 .sign-in_form {
 	display: grid;
 	grid-area: 2/3/6/7;
-	border: 1px solid black;
+	border: none;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-color: #c6c3c3;
+	border-radius: 7px;
+	box-shadow: -9px 13px 8px -2px #a3a3a3bf;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(5, 1fr);
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.sign-in_title {
+	display: grid;
+	grid-area: 1/2/2/4;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	color: #072855;;
+}
+
+
+.sign-in_title:hover {
+	color: #4995ff;
+	transition: 0.2s;
 }
 
 .sign-in_input {
 	display: grid;
 	border: none;
-	border-bottom: 1px solid black;
+	border-bottom: 2px solid rgb(134, 134, 134);
 	outline: none;
 	height: 50px;
 	width: 300px;
 	justify-self: center;
 	align-self: center;
 	padding: 0 0 0 5px;
-	font-family: 'Josefin Sans', sans-serif;
-}
-
-.sign-in_input:nth-child(1) {
-	grid-area: 2/2/3/4;
+	font-family: inherit;
+	font-size: 16px;
 }
 
 .sign-in_input:nth-child(2) {
+	grid-area: 2/2/3/4;
+}
+
+.sign-in_input:nth-child(3) {
 	grid-area: 3/2/4/4;
 }
 
 .sign-in_input:focus {
-	border: 1px solid black;
-	border-radius: 5px;
+	border-color: #4995ff;
 }
 
 .sign-in_button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Josefin Sans', sans-serif;
 	font-size: 16px;
 	border-radius: 10px;
 	border: none;
@@ -56,9 +76,10 @@
 	align-self: center;
 	justify-self: center;
 	cursor: pointer;
+	font-family: inherit;
 }
 
 .sign-in_button:hover {
-	background-color: #082f66;
+	background-color: #4995ff;
 	transition: 0.2s;
 }
