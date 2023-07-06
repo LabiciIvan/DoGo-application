@@ -22,6 +22,8 @@ const SignIn = () => {
 		<div className="sign-in" onSubmit={handleSubmit}>
 			<form className="sign-in_form">
 
+				<h4 className='sign-in_title'>Sign in</h4>
+
 				<input type="email" className='sign-in_input' ref={emailRef} placeholder='Email address' />
 
 				<input type="password" className='sign-in_input' ref={passwordRef} placeholder='Password'/>
