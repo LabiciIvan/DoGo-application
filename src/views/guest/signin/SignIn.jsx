@@ -1,21 +1,34 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './signin.css';
 
 const SignIn = () => {
-
-	const emailRef		= useRef(null);
-	const passwordRef	= useRef(null);
 
 	const [email, setEmail]			= useState(null);
 	const [password, setPassword]	= useState(null);
 
 	const handleSubmit = (e) => {
+
 		// Prevent the default behaviour of submit button.
 		e.preventDefault();
 
-		// Set input value in state from current reference value.
-		setEmail(emailRef.current.value);
-		setPassword(passwordRef.current.value);
+		// Reset the input fields with empty value.
+		e.target.reset();
+
+		// Data in a json object ready to be sent to the backend server.
+		const prepareToSendToBackend = {
+			e :email,
+			p : password
+		}
+	}
+
+	// Handle email value on change from input.
+	const handleEmail = (emailValue) => {
+		setEmail(emailValue);
+	}
+
+	// Handle password value on change from input.
+	const handlePassword = (passwordValue) => {
+		setPassword(passwordValue);
 	}
 
 	return (
@@ -24,9 +37,9 @@ const SignIn = () => {
 
 				<h4 className='sign-in_title'>Sign in</h4>
 
-				<input type="email" className='sign-in_input' ref={emailRef} placeholder='Email address' />
+				<input type="email" className='sign-in_input' placeholder='Email address' onChange={e => handleEmail(e.target.value)}/>
 
-				<input type="password" className='sign-in_input' ref={passwordRef} placeholder='Password'/>
+				<input type="password" className='sign-in_input' placeholder='Password' onChange={e => handlePassword(e.target.value)}/>
 
 				<button className="sign-in_button" type="submit">Sign in</button>
 			</form>
