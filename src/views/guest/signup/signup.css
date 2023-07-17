@@ -1,7 +1,92 @@
-.signup {
+.sign-up {
+	display: grid;
+	height: calc(100vh - 55px); /* This is the calculation of the height */
+	width: inherit;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+}
+
+.sign-up_form {
+	display: grid;
+	grid-area: 2/3/6/7;
+	border: none;
+	border-top: 1px solid;
+	border-right: 1px solid;
+	border-color: #c6c3c3;
+	border-radius: 7px;
+	box-shadow: -9px 13px 8px -2px #a3a3a3bf;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.sign-up_title {
+	display: grid;
+	grid-area: 1/2/2/4;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	color: #072855;;
+}
+
+.sign-up_title:hover {
+	color: #4995ff;
+	transition: 0.2s;
+}
+
+.sign-up_input {
+	display: grid;
+	border: none;
+	border-bottom: 2px solid rgb(134, 134, 134);
+	outline: none;
+	height: 50px;
+	width: 300px;
+	justify-self: center;
+	align-self: center;
+	padding: 0 0 0 5px;
+	font-family: inherit;
+	font-size: 16px;
+}
+
+.sign-up_input.n {
+	grid-area: 2/2/3/4;
+}
+
+.sign-up_input.e {
+	grid-area: 3/2/4/4;
+}
+
+.sign-up_input.p {
+	grid-area: 4/2/5/4;
+}
+
+.sign-up_input.pc {
+	grid-area: 5/2/6/4;
+}
+
+.sign-up_input:focus {
+	border-color: #4995ff;
+}
+
+.sign-up_button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	width: 100%;
+	font-size: 16px;
+	border-radius: 10px;
+	border: none;
+	background-color: #0b397a;
+	color: white;
+	grid-area: 6/2/7/4;
+	width: 150px;
+	height: 50px;
+	align-self: center;
+	justify-self: center;
+	cursor: pointer;
+	font-family: inherit;
+}
+
+.sign-up_button:hover {
+	background-color: #4995ff;
+	transition: 0.2s;
 }
